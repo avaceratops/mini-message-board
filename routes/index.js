@@ -23,4 +23,15 @@ router.get('/new', (req, res) => {
   res.render('form');
 });
 
+router.post('/new', (req, res) => {
+  const { text, user } = req.body;
+
+  if (text !== '' && user !== '') {
+    messages.push({ text, user, added: new Date() });
+    res.redirect('/');
+  } else {
+    res.status(400).send('Name and message cannot be blank.');
+  }
+});
+
 module.exports = router;
