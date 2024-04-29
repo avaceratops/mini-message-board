@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    <h1 class="text-2xl font-bold"><%= title %></h1>
+    <h1 class="mb-4 text-2xl font-bold"><%= title %></h1>
+    <% messages.forEach(message => { %>
+    <p>
+      <span class="text-sm text-gray-500"
+        >[<%= message.added.toLocaleString('en-GB', { timeZone: 'UTC' }) %>]</span
+      >
+      <span class="font-semibold text-indigo-600"><%= message.user %>:</span>
+      <%= message.text %>
+    </p>
+    <% }) %>
   </body>
 </html>
