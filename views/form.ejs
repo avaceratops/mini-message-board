@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>New message</title>
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <h1 class="mb-6 text-2xl font-bold">New message</h1>
+    <form class="flex w-80 flex-col gap-5" method="POST" action="/new">
+      <label>
+        <span class="mb-0.5 block font-semibold">Name</span>
+        <input
+          class="w-full rounded-lg border px-2 py-1"
+          name="user"
+          id="user"
+          type="text"
+          required
+        />
+      </label>
+      <label>
+        <span class="mb-0.5 block font-semibold">Message</span>
+        <textarea
+          class="w-full rounded-lg border px-2 py-1"
+          name="text"
+          id="text"
+          rows="10"
+          required
+        ></textarea>
+      </label>
+      <button
+        class="self-start rounded-lg bg-indigo-600 px-8 py-3 font-semibold text-white shadow transition-colors duration-75 hover:bg-indigo-700 focus:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-500/50 active:bg-indigo-800"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </body>
+</html>
