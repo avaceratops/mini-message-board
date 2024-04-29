@@ -10,15 +10,15 @@
     <h1 class="text-2xl font-bold"><%= title %></h1>
 
     <section class="mb-5 mt-4">
-      <% messages.forEach(message => { %>
+      <% for( let i = messages.length - 1; i >= 0; i-- ) { %>
       <p>
         <span class="font-mono text-sm text-gray-500"
-          >[<%= message.added.toLocaleString('en-GB', { timeZone: 'UTC' }) %>]</span
+          >[<%= messages[i].added.toLocaleString('en-GB', { timeZone: 'UTC' }) %>]</span
         >
-        <span class="font-semibold text-indigo-600"><%= message.user %>:</span>
-        <%= message.text %>
+        <span class="font-semibold text-indigo-600"><%= messages[i].user %>:</span>
+        <%= messages[i].text %>
       </p>
-      <% }) %>
+      <% } %>
     </section>
 
     <a class="group inline-block focus:outline-none" href="/new"
